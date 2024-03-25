@@ -195,7 +195,7 @@ a.btn.btn-primary:hover {
 }
 
 .sticky-top.navbar-light .navbar-brand h1 {
-    color: #0B7656;
+    color:  var(--bs-white);
 }
 
 .navbar-light .navbar-brand img {
@@ -262,6 +262,7 @@ a.btn.btn-primary:hover {
     .navbar-light .navbar-collapse {
         margin-top: 15px;
         border-top: 1px solid #DDDDDD;
+  
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -292,7 +293,9 @@ a.btn.btn-primary:hover {
     
     .sticky-top.navbar-light {
         position: fixed;
-        background: var(--bs-light);
+        /* background: var(--bs-light);  */
+        background:  #9ac0b5;
+
     }
 
     .navbar-light .navbar-nav .nav-link::before {
