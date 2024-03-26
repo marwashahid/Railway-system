@@ -128,7 +128,8 @@
         return false;
     }); 
 
-})(jQuery);
+})
+(jQuery);
 
 
 
