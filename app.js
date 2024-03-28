@@ -6,8 +6,18 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Set views directory and template engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route for serving the index.html file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,  'public', 'index.html'));
+});
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB

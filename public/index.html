@@ -114,7 +114,7 @@
     
         <!-- Carousel Start -->
         <div class="carousel-header">
-            <span class="submenu" style="display: none; overflow: visible; background-color: #1c1f1e;">I am a submenu</span>
+           
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
               
                 <ol class="carousel-indicators">
@@ -1139,24 +1139,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-        $(document).ready(function () {
-            $(".nav-item").mouseenter(function () {
-
-                var item = $(".submenu");
-                item.show(),
-                    item.animate({
-                        height: '150px',
-                        width: '200px',
-                    });
-
-            }),
-                $(".nav-item").mouseleave(function () {
-
-                    var item = $(".submenu");
-                    item.hide();
-                       
-                });
-        });
     </script>
 
 </body>
