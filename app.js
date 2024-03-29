@@ -9,6 +9,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/railway')
@@ -17,6 +18,13 @@ mongoose.connect('mongodb://localhost:27017/railway')
 
 // Use userRoutes for handling user-related requests
 app.use('/routes', userRoutes);
+app.use('/', userRoutes);
+app.use('/SignIn',userRoutes);
+app.use('/Check',userRoutes);
+
+
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
