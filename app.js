@@ -32,7 +32,7 @@ mongoose.connect('mongodb://localhost:27017/railway')
 .catch((err) => console.log("Mongo Error",err));
 
 // Use userRoutes for handling user-related requests
-//app.use('/routes', userRoutes);
+app.use('/routes', stationRoutes);
 
 
 // Start the server
