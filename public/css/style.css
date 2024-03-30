@@ -1,3 +1,6 @@
+body {
+    background-color: whitesmoke;
+}
 
 /*** Spinner Start ***/
 /*** Spinner ***/
@@ -6,6 +9,7 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+
 }
 
 a.btn.btn-primary,
@@ -15,9 +19,22 @@ a.btn.btn-primary:hover {
 }
 
 
+.mapDiv {
+    border: 2px solid #0B7656;
+    margin-bottom: 2px;
+    margin-top: 0px;
+}
 
-#register
-{
+#map {
+    width: 100%;
+    height: 420px;
+    position: relative;
+
+}
+
+
+
+#register {
     background-color: #0B7656;
 }
 
@@ -27,6 +44,7 @@ a.btn.btn-primary:hover {
     visibility: visible;
     opacity: 1;
 }
+
 /*** Spinner End ***/
 
 .back-to-top {
@@ -47,7 +65,7 @@ a.btn.btn-primary:hover {
     font-weight: 600;
     transition: .5s;
     background-color: #0B7656;
-    color:aliceblue;
+    color: aliceblue;
 }
 
 .btn-square {
@@ -84,12 +102,15 @@ a.btn.btn-primary:hover {
 
 .btn.btn-primary {
     box-shadow: inset 0 0 0 0 #0B7656;
+
 }
+
 
 .btn.btn-primary:hover {
     box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
     color: #579986 !important;
 }
+
 
 .btn.btn-light {
     box-shadow: inset 0 0 0 0 #0B7656;
@@ -162,9 +183,10 @@ a.btn.btn-primary:hover {
 
 @media (max-width: 768px) {
     .topbar {
-        display: none;    
+        display: none;
     }
 }
+
 /*** Topbar End ***/
 
 
@@ -198,7 +220,7 @@ a.btn.btn-primary:hover {
 }
 
 .sticky-top.navbar-light .navbar-brand h1 {
-    color:  var(--bs-white);
+    color: #0B7656;
 }
 
 .navbar-light .navbar-brand img {
@@ -265,7 +287,7 @@ a.btn.btn-primary:hover {
     .navbar-light .navbar-collapse {
         margin-top: 15px;
         border-top: 1px solid #DDDDDD;
-  
+
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -275,7 +297,7 @@ a.btn.btn-primary:hover {
     }
 
     .navbar-light .navbar-nav .nav-link:hover,
-    .navbar-light .navbar-nav .nav-link.active  {
+    .navbar-light .navbar-nav .nav-link.active {
         color: #0B7656 !important;
     }
 
@@ -293,11 +315,11 @@ a.btn.btn-primary:hover {
         border-bottom: 1px solid rgba(255, 255, 255, .1);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar-light {
         position: fixed;
-        /* background: var(--bs-light);  */
-        background:  #9ac0b5;
+        background: var(--bs-light);
+        /* background:  #9ac0b5; */
 
     }
 
@@ -365,7 +387,7 @@ a.btn.btn-primary:hover {
 
 .carousel-header .carousel-inner .carousel-item {
     position: relative;
-    min-height: 100vh 
+    min-height: 100vh
 }
 
 .carousel-header .carousel-inner .carousel-item img {
@@ -375,7 +397,7 @@ a.btn.btn-primary:hover {
     object-fit: cover;
 }
 
-.carousel-header .carousel-inner .carousel-item .carousel-caption  {
+.carousel-header .carousel-inner .carousel-item .carousel-caption {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -391,6 +413,7 @@ a.btn.btn-primary:hover {
 }
 
 @media (max-width: 768px) {
+
     .carousel-header .carousel-inner .carousel-item img,
     .carousel-header .carousel-inner .carousel-item .carousel-caption {
         height: 700px;
@@ -405,12 +428,13 @@ a.btn.btn-primary:hover {
     .carousel-header .carousel-control-next .carousel-control-next-icon {
         opacity: 0;
     }
-    
+
     .search-bar {
         margin-top: -100px;
         transition: 0.5s;
     }
 }
+
 /*** Carousel Hero Header End ***/
 
 
@@ -427,6 +451,7 @@ a.btn.btn-primary:hover {
 .bg-breadcrumb .breadcrumb-item a {
     color: #0B7656 !important;
 }
+
 /*** Single Page Hero Header End ***/
 
 
@@ -448,6 +473,7 @@ a.btn.btn-primary:hover {
     margin-right: -50px;
     border: 1px solid #0B7656 !important;
 }
+
 /*** About End ***/
 
 
@@ -455,6 +481,7 @@ a.btn.btn-primary:hover {
 .service .service-content-inner {
     transition: 0.5s;
 }
+
 .service .service-content-inner:hover {
     position: relative;
     background: #0B7656 !important;
@@ -471,14 +498,15 @@ a.btn.btn-primary:hover {
 .service .service-content-inner:hover .service-icon i {
     color: var(--bs-white) !important;
 }
+
 /*** Service End ***/
 
 
 /*** Destination Start ***/
-.tab-content label{
+.tab-content label {
     display: block;
     margin-bottom: 6px;
-    color:#0B7656;
+    color: #0B7656;
     font-weight: bold;
 }
 
@@ -522,6 +550,7 @@ a.btn.btn-primary:hover {
 .destination .tab-class .nav-item {
     padding: 0 0 20px 0;
 }
+
 .destination .tab-class .nav-item a.active {
     background: #0B7656 !important;
 }
@@ -549,6 +578,7 @@ a.btn.btn-primary:hover {
 .destination .tab-class .tab-content .destination-img:hover img {
     transform: scale(1.2);
 }
+
 /*** Destination End ***/
 
 
@@ -616,15 +646,15 @@ a.btn.btn-primary:hover {
 
 .packages .packages-item .packages-img .packages-price {
     position: absolute;
-    width: 100px; 
-    top: 0; 
-    left: 50%; 
+    width: 100px;
+    top: 0;
+    left: 50%;
     transform: translateX(-50%);
     display: inline-block;
     background: #0B7656;
     color: var(--bs-white);
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; 
+    border-bottom-right-radius: 10px;
     z-index: 5;
 }
 
@@ -668,6 +698,7 @@ a.btn.btn-primary:hover {
 .packages .packages-carousel .owl-nav .owl-next:hover i {
     color: var(--bs-white);
 }
+
 /*** Packages End ***/
 
 
@@ -675,6 +706,7 @@ a.btn.btn-primary:hover {
 .ExploreTour .tab-class .nav-item {
     padding: 0 0 20px 0;
 }
+
 .ExploreTour .tab-class .nav-item a.active {
     background: #0B7656 !important;
 }
@@ -837,6 +869,7 @@ a.btn.btn-primary:hover {
     width: 40px;
     background: #0B7656;
 }
+
 /*** Explore Tour End ***/
 
 
@@ -885,8 +918,8 @@ a.btn.btn-primary:hover {
 
 .gallery .gallery-item:hover .gallery-content .gallery-info,
 .gallery .gallery-item:hover .gallery-plus-icon {
-   opacity: 1;
-   margin: 0;
+    opacity: 1;
+    margin: 0;
 }
 
 .gallery .gallery-item img {
@@ -904,6 +937,7 @@ a.btn.btn-primary:hover {
 .gallery .tab-class .nav-item {
     padding: 0 0 20px 0;
 }
+
 .gallery .tab-class .nav-item a.active {
     background: #0B7656 !important;
 }
@@ -921,7 +955,7 @@ a.btn.btn-primary:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    
+
 }
 
 
@@ -963,8 +997,8 @@ a.btn.btn-primary:hover {
 
 .guide .guide-item .guide-img .guide-icon {
     position: absolute;
-    bottom: 0; 
-    left: 50%; 
+    bottom: 0;
+    left: 50%;
     transform: translate(-50%, -50%);
     margin-bottom: -50px;
     display: flex;
@@ -1001,6 +1035,7 @@ a.btn.btn-primary:hover {
 .guide .guide-item .guide-img-efects img {
     transition: 0.5s;
 }
+
 .guide .guide-item:hover .guide-img-efects img {
     transform: scale(1.1);
 }
@@ -1043,6 +1078,7 @@ a.btn.btn-primary:hover {
 .guide .guide-item:hover .guide-title .guide-title-inner h4 {
     color: var(--bs-white);
 }
+
 /*** Travel Guide End ***/
 
 
@@ -1111,6 +1147,7 @@ a.btn.btn-primary:hover {
 .blog .blog-item .blog-img:hover .blog-img-inner img {
     transform: scale(1.2);
 }
+
 /*** Blog End ***/
 
 /*** Testimonial Start ***/
@@ -1120,11 +1157,12 @@ a.btn.btn-primary:hover {
 
 .testimonial .testimonial-carousel .testimonial-item .testimonial-img {
     position: relative;
-    width: 100px; 
-    height: 100px; 
-    top: 0; left: 50%; 
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid #0B7656; 
+    border: 3px solid #0B7656;
     border-style: dotted;
     border-radius: 50%;
 }
@@ -1197,10 +1235,11 @@ a.btn.btn-primary:hover {
 }
 
 .testimonial .testimonial-carousel .owl-item.center .testimonial-item .testimonial-img {
-    border: 3px solid var(--bs-white); 
+    border: 3px solid var(--bs-white);
     border-style: dotted;
     transition: 0.5s;
 }
+
 /*** Testimonial End ***/
 
 /*** Contact Start ***/
@@ -1212,6 +1251,7 @@ a.btn.btn-primary:hover {
     box-shadow: inset 1000px 0 0 0 var(--bs-light) !important;
     color: #0B7656 !important;
 }
+
 /*** Contact End ***/
 
 /*** Subscribe Start ***/
@@ -1251,12 +1291,14 @@ a.btn.btn-primary:hover {
     margin-left: -50px;
     border: 1px solid var(--bs-white) !important;
 }
+
 /*** Subscribe End ***/
 
 /*** Footer Start ***/
 .footer {
     background: #0B7656;
 }
+
 .footer .footer-item a {
     line-height: 30px;
     color: var(--bs-white);
@@ -1275,4 +1317,5 @@ a.btn.btn-primary:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: #0B7656 !important;
 }
+
 /*** copyright end ***/

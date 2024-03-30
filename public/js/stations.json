@@ -1,0 +1,76 @@
+[
+
+{
+    "train_name" : "Subak Raftar(102DN)",
+    "departure"  : "07:00:00(Rawalpindi)",
+    "arrival"    :"09:59:00(GRT)",
+    "date"       : "2024-03-30T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Subak Kharam(104DN)",
+    "departure"  : "16:30:00(Rawalpindi)",
+    "arrival"    :"19:35:00(GRT)",
+    "date"       : "2024-04-01T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Rawalpindi Express(110DN)",
+    "departure"  : "19:30:00(Rawalpindi)",
+    "arrival"    :"22:12:00(GRT)",
+    "date": "2024-03-30T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Jafar Express(40DN)",
+    "departure"  : "10:40:00(Rawalpindi)",
+    "arrival"    :"13:46:00(GRT)",
+    "date": "2024-03-30T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Pakistan Express(46DN)",
+    "departure"  : "06:00:00(Rawalpindi)",
+    "arrival"    :"09:13:00(GRT)",
+    "date" : "2024-04-01T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Islamabad Express(108DN)",
+    "departure"  : "17:15:00(MARGALA)",
+    "arrival"    :"22:35:00(LHR)",
+    "date": "2024-04-01T12:00:00Z"
+
+}
+,
+{
+    "train_name" : "Green Line(6DN)",
+    "departure"  : "15:00:00(MARGALA)",
+    "arrival"    :"20:05:00(LHR)",
+    "date" : "2024-04-02T12:00:00Z"
+
+}
+,
+
+{
+    "train_name" : "MOHADDIS-E-AZAM(169UP)",
+    "departure"  : "08:00:00(KARACHI CANTT)",
+    "arrival"    : "02:15:00(FSLD)",
+    "date" : "2024-03-30T12:00:00Z"
+}
+,
+
+{
+    "train_name" : "Karakoram Express(41UP)",
+    "departure"  : "15:00:00(KARACHI CANTT)",
+    "arrival"    : "07:15:00(FSLD)",
+    "date" : "2024-04-02T12:00:00Z"
+}
+
+
+]

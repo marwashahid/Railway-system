@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pakistan Railways</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/public/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Pakistan Railways</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="#" class="nav-item nav-link">About</a>
+                    <a href="#" class="nav-item nav-link">Fares and Schedule</a>
+                    <a href="#" class="nav-item nav-link">Routes & Maps</a>
+                    <a href="#" class="nav-item nav-link">Login</a>
+                    <a href="#" class="nav-item nav-link">Signup</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn  btn-outline-dark-0 rounded-pill py-2 px-4 ms-lg-4">Book Ticket</a>
+            </div>
+        </nav>
+
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <% for (let i=0; i < 3; i++) { %>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="<%= i %>" <% if (i===0) { %>class="active"<%
+                                } %>></li>
+                        <% } %>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <% const images=["public/img/img2.jpg", "public/img/img3.jpg" , "public/img/img4.jpeg" ]; %>
+                        <% const captions=[ "Let's Explore Pakistan Together!"
+                            , "Find Your Perfect Tour At Pak Railways" , "You Like To Go?" ]; %>
+                            <% for (let i=0; i < images.length; i++) { %>
+                                <div class="carousel-item <% if (i === 0) { %>active<% } %>">
+                                    <img src="<%= images[i] %>" class="img-fluid" alt="Image">
+                                    <div class="carousel-caption">
+                                        <div class="p-3" style="max-width: 900px;">
+                                            <h1 class="display-2 text-capitalize text-white mb-4">
+                                                <%= captions[i] %>
+                                            </h1>
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <a class="btn  btn-outline-dark-0 rounded-pill py-3 px-5"
+                                                    href="#">Discover Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn" aria-hidden="false"
+                        style="background-color:#0B7656;"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn" aria-hidden="false"
+                        style="background-color:#0B7656;"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+    </div>
+
+    <!-- About Start -->
+    <div class="container-fluid about py-5">
+        <div class="container py-5" style="background-color: #c9e0da;">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="h-100"
+                        style="border: 50px solid; border-color: transparent #0B7656 transparent #0B7656;">
+                        <img src="public/img/train.jpg" class="img-fluid w-100 h-100" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h5 class="section-about-title pe-3">About Us</h5>
+                    <h1 class="mb-4">Welcome to <span style="color:#1f4e40">Pakistan Railways</span></h1>
+                    <p class="mb-4" style="color:#1c1f1e">The first railway of Pakistan, between Karachi City and Kotri,
+                        was opened in 1861.
+                        At the
+                        time of independence, most of the existing network had been constructed. </p>
+                    <p class="mb-4" style="color:#1c1f1e"> The Pakistan Railways network is comprised of 7,791
+                        route-kilometres; 7,346 km of
+                        broad
+                        gauge and 445 km of metre gauge. There are 625 stations in the network, 1,043 km of
+                        double-track sections (in total) and 285 km of electrified sections.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>Economy Class
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>Business Class
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>5 Star
+                                Accommodations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>Clean
+                                Washrooms</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>Food Courts
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0" style="color:#1c1f1e"><i class="fa fa-arrow-right  me-2"
+                                    style="color:#1f4e40"></i>24/7 Service
+                            </p>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-dark-0 rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
+    <div class="container-fluid bg-light service py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Services</h5>
+                <h1 class="mb-0" style="color:#0B7656;">Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div
+                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content text-end">
+                                    <h5 class="mb-4 p-3" style="text-align: left;">Fare Calculator</h5>
+                                    <p class="mb-0 p-3" style="text-align: left;">Calculate fare for your journey from
+                                        the comfort of your home.
+                                        Just enter your start station and destination station and your desired train and
+                                        you can calculate your fare.<br> <br>Happy Faring!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                <div class="service-content text-end">
+                                    <h5 class="mb-4 p-3" style="text-align: left;">Plan your trip</h5>
+                                    <p class="mb-0 p-3" style="text-align: left;">Dolor sit amet consectetur adipisicing
+                                        elit. Non alias eum,
+                                        suscipit
+                                        expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore
+                                        consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div
+                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content">
+                                    <h5 class="mb-4 p-3" style="text-align: left;">Initiative Junction</h5>
+                                    <p class="mb-0 p-3" style="text-align: left;">Pakistan Railways is all set to start
+                                        a new journey with
+                                        improved services and accessibilty. We are inviting
+                                        individuals/investors to share their ideas, initiatives, startups related to
+                                        Pakistan Railways at one platform, the 'Initiative Junction.'
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                <div class="service-content">
+                                    <h5 class="mb-4 p-3" style="text-align: left;">Book your ticket</h5>
+                                    <p class="mb-0 p-3" style="text-align: left;">Pakistan Railways is all set to start
+                                        a new journey with
+                                        improved services and accessibilty. We are inviting
+                                        individuals/investors to share their ideas, initiatives, startups related to
+                                        Pakistan Railways at one platform, the 'Initiative Junction.'
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="text-center">
+                    <a class="btn btn-outline-dark-0 rounded-pill py-3 px-5 mt-4" href="">Service More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+    <div class="container-fluid gallery py-5 my-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Our Gallery</h5>
+            <h1 class="mb-4">Pakistan Railways</h1>
+            <p class="mb-0">The gallery reflects the rich history and evolution of the railways of Pakistan.</p>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill"
+                        href="#GalleryTab-1">
+                        <span class="text-dark" style="width: 150px;">Railways</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                        href="#GalleryTab-2">
+                        <span class="text-dark" style="width: 150px;">Trains</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                        href="#GalleryTab-3">
+                        <span class="text-dark" style="width: 150px;">Railway Heritage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                        href="#GalleryTab-4">
+                        <span class="text-dark" style="width: 150px;">Railway Bridges</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                        href="#GalleryTab-5">
+                        <span class="text-dark" style="width: 150px;">AC standard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                        href="#GalleryTab-6">
+                        <span class="text-dark" style="width: 150px;">AC business class</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <% for(let i=1; i <=6; i++) { %>
+                    <div id="GalleryTab-<%= i %>" class="tab-pane fade show p-0 <%= i === 1 ? 'active' : '' %>">
+                        <div class="row g-2">
+                            <% for(let j=1; j <=4; j++) { %>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div class="gallery-item h-100">
+                                        <img src="public/img/<%= i === 1 ? 'lhr-railway-' + j : i === 2 ? 'khyber-' + j : i === 3 ? 'block-' + j : i === 4 ? 'attock-bridge' + j : i === 5 ? 'ac-std-' + j : 'ac-business-' + j %>.jpg"
+                                            class="img-fluid w-100 h-100 rounded" alt="Image">
+                                        <div class="gallery-content">
+                                            <div class="gallery-info">
+                                                <h5 class="text-white text-uppercase mb-2">
+                                                    <% if(i===1) { %>Lahore Railway Station 1886<% } else if(i===2) { %>
+                                                            Khyber Steam Safari 1995<% } else if(i===3) { %>Block
+                                                                Instruments on Bolan Section 1995<% } else if(i===4) {
+                                                                    %>Attock Bridge over River Indus<% } else if(i===5)
+                                                                        { %>AC Standard for Passenger Trains<% } else {
+                                                                            %>AC Business<% } %>
+                                                </h5>
+                                                <a href="#" class="btn-hover text-white">View <i
+                                                        class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- Explore Tour Start -->
+    <div class="container-fluid ExploreTour py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Find on Map</h5>
+            </div>
+            <div class="tab-class text-center">
+                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                    <li class="nav-item">
+                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
+                            data-bs-toggle="pill" href="#NationalTab-1">
+                            <span id="departureBtn" class="text-dark" style="width: 250px;">Search by
+                                Arrival/Departure</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
+                            href="#InternationalTab-2">
+                            <span class="text-dark" style="width: 250px;">Search by Train</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="NationalTab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="arrivalTime">Arrival</label>
+                                <select id="arrivalTime" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Arrival --</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Karachi">Karachi</option>
+                                    <option value="Islamabad">Islamabad</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="deptTime">Departure</label>
+                                <select id="deptTime" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Departure --</option>
+                                    <option value="Faisalabad">Faisalabad</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Karachi Cantt">Karachi Cantt</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label>Date time</label>
+                                <input type="date" class="form-control" placeholder="Date" aria-label="Last name">
+                            </div>
+                            <div class="col-12">
+                                <a id="searchTrain1"
+                                    class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1">Search</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="InternationalTab-2" class="tab-pane fade show p-0">
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="train">Train</label>
+                                <select id="train" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Train --</option>
+                                    <option value="08:00">08:00 AM</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <a id="searchTrain2" class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1"
+                                    href="">Search</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mapDiv">
+        <div id="map">
+
+        </div>
+    </div>
+    <div id="resultTable"></div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+
+                        <a href=""><i class="fas fa-envelope me-2"></i> pakrailways@railway.pk.com</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-share fa-2x text-white me-2"></i>
+                            <a class="btn-square btn btn-outline-dark-0 rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn-square btn btn-outline-dark-0 rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn-square btn btn-outline-dark-0 rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn-square btn btn-outline-dark-0 rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+
+                        <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <div class="row gy-3 gx-2 mb-4">
+                            <div class="col-xl-6">
+                                <form>
+                                    <div class="form-floating">
+                                        <select class="form-select bg-dark border" id="select1">
+                                            <option value="1">Arabic</option>
+                                            <option value="2">German</option>
+                                            <option value="3">Greek</option>
+                                            <option value="3">New York</option>
+                                        </select>
+                                        <label for="select1">English</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-xl-6">
+                                <form>
+                                    <div class="form-floating">
+                                        <select class="form-select bg-dark border" id="select1">
+                                            <option value="1">USD</option>
+                                            <option value="2">EUR</option>
+                                            <option value="3">INR</option>
+                                            <option value="3">GBP</option>
+                                        </select>
+                                        <label for="select1">$</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h4 class="text-white mb-3">Payments</h4>
+                        <div class="footer-bank-card">
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2" style="color: white;"></i><a class="text-white" href="#">Pakistan
+                        Railways All right reserved.</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-dark-0  btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        const map = L.map('map');
+        map.setView([30.3753, 69.3451], 6);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        L.marker([29.403645, 71.652025]).addTo(map);
+        L.marker([31.417522, 73.096873]).addTo(map);
+        L.marker([31.576360, 74.335917]).addTo(map);
+        L.marker([31.577991, 74.335991]).addTo(map);
+        L.marker([24.843900, 67.040074]).addTo(map);
+        L.marker([33.603506, 73.048838]).addTo(map);
+        L.marker([24.870285, 67.345009]).addTo(map);
+        L.marker([24.904796, 67.163061]).addTo(map);
+        L.marker([24.908547, 67.122536]).addTo(map);
+        L.marker([24.923548, 67.147347]).addTo(map);
+        L.marker([25.014496, 67.098314]).addTo(map);
+        L.marker([24.836745, 66.962680]).addTo(map);
+        L.marker([25.367133, 68.297677]).addTo(map);
+        L.marker([25.381465, 68.373852]).addTo(map);
+        L.marker([26.245932, 68.411652]).addTo(map);
+        L.marker([27.684939, 68.899479]).addTo(map);
+        L.marker([28.640309, 70.649253]).addTo(map);
+        L.marker([29.539153, 71.623192]).addTo(map);
+        L.marker([30.180778, 71.445865]).addTo(map);
+        L.marker([30.187867, 71.516056]).addTo(map);
+        L.marker([30.309930, 71.929464]).addTo(map);
+        L.marker([30.187867, 71.516056]).addTo(map);
+        L.marker([31.626859, 74.290734]).addTo(map);
+        L.marker([32.176777, 74.187690]).addTo(map);
+        L.marker([32.445964, 74.112250]).addTo(map);
+        L.marker([32.56258, 74.064554]).addTo(map);
+        L.marker([32.700436, 73.946669]).addTo(map);
+        L.marker([32.929991, 73.726110]).addTo(map);
+        L.marker([33.827071, 72.698818]).addTo(map);
+        L.marker([33.774974, 72.352615]).addTo(map);
+        L.marker([34.018042, 71.587282]).addTo(map);
+        L.marker([34.002690, 71.55019]).addTo(map);
+    </script>
+    <script>
+
+        document.getElementById("searchTrain1").addEventListener("click", function () {
+            let input1Value = document.getElementById("arrivalTime").value;
+            let input2Value = document.getElementById("deptTime").value;
+
+            fetch(`/search?input1=${input1Value}&input2=${input2Value}`, { method: "GET" })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle response data and render table
+                    let tableHtml = "<table><thead><tr><th>Column 1</th><th>Column 2</th></tr></thead><tbody>";
+                    data.forEach(row => {
+                        tableHtml += `<tr><td>${row.column1}</td><td>${row.column2}</td></tr>`;
+                    });
+                    tableHtml += "</tbody></table>";
+                    document.getElementById("resultTable").innerHTML = tableHtml;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>

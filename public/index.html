@@ -22,11 +22,19 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -40,37 +48,7 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <!-- <div class="container-fluid  px-5 d-none d-lg-block" style="background-color:#0B7656;">
-            <div class="row gx-0">
-                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end" id="register">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="#"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
-                        <a href="#"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
-                            <div class="dropdown-menu rounded">
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    <!-- Topbar End -->
+
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
@@ -92,31 +70,19 @@
                     <a href="#" class="nav-item nav-link">Routes & Maps</a>
                     <a href="#" class="nav-item nav-link">Login</a>
                     <a href="#" class="nav-item nav-link">Signup</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="destination.html" class="dropdown-item">Destination</a>
-                            <a href="tour.html" class="dropdown-item">Explore Tour</a>
-                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
-                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
-                            <a href="guides.html" class="dropdown-item">Travel Guides</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div> -->
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="" class="btn  btn-outline-dark-0 rounded-pill py-2 px-4 ms-lg-4">Book Ticket</a>
 
             </div>
         </nav>
-        
-    
+
+
         <!-- Carousel Start -->
         <div class="carousel-header">
-           
+
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-              
+
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
                     <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
@@ -184,16 +150,8 @@
         </div>
         <!-- Carousel End -->
     </div>
-    
-    <!-- <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
-            <div class="container">
-                <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: #0B7656;">
-                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-                    <button type="button" class="btn btn-outline-dark-0 rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
-                </div>
-            </div>
-        </div> -->
-    <!-- Navbar & Hero End -->
+
+
 
     <!-- About Start -->
     <div class="container-fluid about py-5">
@@ -282,21 +240,7 @@
                                 </div> -->
                             </div>
                         </div>
-                        <!-- <div class="col-12">
-                            <div
-                                class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
-                                <div class="service-content text-end">
-                                    <h5 class="mb-4">Hotel Reservation</h5>
-                                    <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit
-                                        expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore
-                                        consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                    </p>
-                                </div>
-                                <div class="service-icon p-4">
-                                    <i class="fa fa-hotel fa-4x " style="color:#0B7656;"></i>
-                                </div>
-                            </div>
-                        </div> -->
+
                         <div class="col-6">
                             <div
                                 class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
@@ -353,36 +297,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="col-12">
-                            <div
-                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                <div class="service-icon p-4">
-                                    <i class="fa fa-hotel fa-4x " style="color:#0B7656;"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h5 class="mb-4">Hotel Reservation</h5>
-                                    <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit
-                                        expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore
-                                        consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12"> -->
-                        <!-- <div
-                                class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                <div class="service-icon p-4">
-                                    <i class="fa fa-user fa-4x " style="color:#0B7656;"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h5 class="mb-4">Travel Guides</h5>
-                                    <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit
-                                        expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore
-                                        consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                    </p>
-                                </div>
-                            </div> -->
                     </div>
 
                 </div>
@@ -782,6 +696,7 @@
                             <span id="departureBtn" class="text-dark" style="width: 250px;">Search by
                                 Arrival/Departure</span>
                         </a>
+
                     </li>
                     <li class="nav-item">
                         <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
@@ -794,21 +709,35 @@
                     <div id="NationalTab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-3">
                             <div class="col">
-                                <label>Arrival time</label>
-                                <input type="text" class="form-control" placeholder="Arrival time"
-                                    aria-label="First name">
+                                <label for="arrivalTime">Arrival</label>
+                                <select id="arrivalTime" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Arrival --</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Karachi Cantt">Karachi Cantt</option>
+                                    <option value="Islamabad">Islamabad</option>
+                                </select>
+                                <!-- <input id ="Arrival" type="text" class="form-control" placeholder="Arrival time"
+                                    aria-label="First name"> -->
                             </div>
                             <div class="col">
-                                <label>Departure time</label>
-                                <input type="text" class="form-control" placeholder="Departure time"
-                                    aria-label="Last name">
+                                <label for="deptTime">Departure</label>
+                                <select id="deptTime" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Departure --</option>
+                                    <option value="Faisalabad">Faisalabad</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Karachi Cantt">Karachi Cantt</option>
+                                </select>
+                                <!-- <input type="text" class="form-control" placeholder="Departure time"
+                                    aria-label="Last name"> -->
                             </div>
                             <div class="col">
                                 <label>Date time</label>
-                                <input type="text" class="form-control" placeholder="Date" aria-label="Last name">
+
+                                <input type="date" class="form-control" placeholder="Date" aria-label="Last name">
                             </div>
                             <div class="col-12">
-                                <a class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1" href="">Search</a>
+                                <a id="searchTrain1"
+                                    class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1">Search</a>
                             </div>
                         </div>
                     </div>
@@ -816,205 +745,41 @@
                     <div id="InternationalTab-2" class="tab-pane fade show p-0">
                         <div class="row g-3">
                             <div class="col">
-                                <label>Train</label>
-                                <input type="text" class="form-control" placeholder="Station" aria-label="First name">
+                                <label for="train">Train</label>
+                                <select id="train" class="form-control" aria-label="Arrival Time">
+                                    <option value="">-- Select Train --</option>
+                                    <option value="08:00">08:00 AM</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                </select>
+                                <!-- <input type="text" class="form-control" placeholder="Station" aria-label="First name"> -->
                             </div>
                             <div class="col-12">
-                                <a class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1" href="">Search</a>
+                                <a id="searchTrain2" class="btn btn-outline-dark-0 rounded-pill py-2 px-4 mt-1"
+                                    href="">Search</a>
                             </div>
                         </div>
                     </div>
-                    <!-- <div id="NationalTab-1" class="tab-pane fade show ewp-0 active">
-                               
-                              
-                                <div class="row g-4">
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-1.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Weekend Tour</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-2.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Holiday Tour</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-3.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Road Trip</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="tour-offer bg-info">15% Off</div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-4.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Historical Trip</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-5.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Family Tour</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="tour-offer bg-warning">50% Off</div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="national-item">
-                                            <img src="img/explore-tour-6.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                            <div class="national-content">
-                                                <div class="national-info">
-                                                    <h5 class="text-white text-uppercase mb-2">Beach Tour</h5>
-                                                    <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="national-plus-icon">
-                                                <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                    <!-- <div id="InternationalTab-2" class="tab-pane fade show p-0">
-                                <div class="InternationalTour-carousel owl-carousel">
-                                    <div class="international-item">
-                                        <img src="img/explore-tour-1.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="international-content">
-                                            <div class="international-info">
-                                                <h5 class="text-white text-uppercase mb-2">Australia</h5>
-                                                <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                                <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>143+ Tour Places</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="tour-offer bg-success">30% Off</div>
-                                        <div class="international-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="international-item">
-                                        <img src="img/explore-tour-2.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="international-content">
-                                            <div class="international-info">
-                                                <h5 class="text-white text-uppercase mb-2">Germany</h5>
-                                                <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 12 Cities</a>
-                                                <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>21+ Tour Places</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="international-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="international-item">
-                                        <img src="img/explore-tour-3.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="international-content">
-                                            <div class="tour-offer bg-warning">45% Off</div>
-                                            <div class="international-info">
-                                                <h5 class="text-white text-uppercase mb-2">Spain</h5>
-                                                <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 9 Cities</a>
-                                                <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>133+ Tour Places</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="international-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="international-item">
-                                        <img src="img/explore-tour-4.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="international-content">
-                                            <div class="international-info">
-                                                <h5 class="text-white text-uppercase mb-2">Japan</h5>
-                                                <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                                <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>137+ Tour Places</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="international-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="international-item">
-                                        <img src="img/explore-tour-5.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="international-content">
-                                            <div class="tour-offer bg-info">70% Off</div>
-                                            <div class="international-info">
-                                                <h5 class="text-white text-uppercase mb-2">London</h5>
-                                                <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 17 Cities</a>
-                                                <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>26+ Tour Places</span></a>
-                                            </div>
-                                        </div>
-                                        <div class="international-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+
+
+
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-12">
-        <div class="rounded">
-            <iframe class="rounded-top w-100" style="height: 450px; margin-bottom: -6px;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class=" text-center p-4 rounded-bottom" style="background-color: #254d41;">
-            <h4 class="text-white fw-bold">Follow Us</h4>
-            <div class="d-flex align-items-center justify-content-center">
-                <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle"><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
+
+
+    <div class="mapDiv">
+        <div id="map">
+
         </div>
     </div>
 
 
+    </div>
+    <div id="resultTable"></div>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5">
@@ -1023,8 +788,8 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Get In Touch</h4>
-                        <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                        <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+
+                        <a href=""><i class="fas fa-envelope me-2"></i> pakrailways@railway.pk.com</a>
                         <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
                         <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
                         <div class="d-flex align-items-center">
@@ -1042,13 +807,12 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-white">Company</h4>
+
                         <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
                         <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
                         <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
                         <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
@@ -1136,11 +900,74 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
 
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-    </script>
+        const map = L.map('map');
+        map.setView([30.3753, 69.3451], 6);
 
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        L.marker([29.403645, 71.652025]).addTo(map);
+        L.marker([31.417522, 73.096873]).addTo(map);
+        L.marker([31.576360, 74.335917]).addTo(map);
+        L.marker([31.577991, 74.335991]).addTo(map);
+        L.marker([24.843900, 67.040074]).addTo(map);
+        L.marker([33.603506, 73.048838]).addTo(map);
+        L.marker([24.870285, 67.345009]).addTo(map);
+        L.marker([24.904796, 67.163061]).addTo(map);
+        L.marker([24.908547, 67.122536]).addTo(map);
+        L.marker([24.923548, 67.147347]).addTo(map);
+        L.marker([25.014496, 67.098314]).addTo(map);
+        L.marker([24.836745, 66.962680]).addTo(map);
+        L.marker([25.367133, 68.297677]).addTo(map);
+        L.marker([25.381465, 68.373852]).addTo(map);
+        L.marker([26.245932, 68.411652]).addTo(map);
+        L.marker([27.684939, 68.899479]).addTo(map);
+        L.marker([28.640309, 70.649253]).addTo(map);
+        L.marker([29.539153, 71.623192]).addTo(map);
+        L.marker([30.180778, 71.445865]).addTo(map);
+        L.marker([30.187867, 71.516056]).addTo(map);
+        L.marker([30.309930, 71.929464]).addTo(map);
+        L.marker([30.187867, 71.516056]).addTo(map);
+        L.marker([31.626859, 74.290734]).addTo(map);
+        L.marker([32.176777, 74.187690]).addTo(map);
+        L.marker([32.445964, 74.112250]).addTo(map);
+        L.marker([32.56258, 74.064554]).addTo(map);
+        L.marker([32.700436, 73.946669]).addTo(map);
+        L.marker([32.929991, 73.726110]).addTo(map);
+        L.marker([33.827071, 72.698818]).addTo(map);
+        L.marker([33.774974, 72.352615]).addTo(map);
+        L.marker([34.018042, 71.587282]).addTo(map);
+        L.marker([34.002690, 71.55019]).addTo(map);
+    </script>
+     <script>
+
+        document.getElementById("searchTrain1").addEventListener("click", function () {
+            let input1Value = document.getElementById("arrivalTime").value;
+            let input2Value = document.getElementById("deptTime").value;
+
+            fetch(`/search?arrival=${input1Value}&departure=${input2Value}`, { method: "GET" })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle response data and render table
+                    let tableHtml = "<table><thead><tr><th>Column 1</th><th>Column 2</th></tr></thead><tbody>";
+                    data.forEach(row => {
+                        tableHtml += `<tr><td>${row.column1}</td><td>${row.column2}</td></tr>`;
+                    });
+                    tableHtml += "</tbody></table>";
+                    document.getElementById("resultTable").innerHTML = tableHtml;
+                })
+                .catch(error => {
+
+                    console.error('Error:', error);
+                });
+        });
+    </script>
 </body>
 
 </html>
