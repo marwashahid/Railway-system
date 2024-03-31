@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
     // Send the index.html file as the response
     res.sendFile(indexPath);
 });
+
 router.get('/SignIn', (req, res) => {
     // Construct the relative path to the index.html fi
     
     // Send the index.html file as the response
     res.render("SignIn");
 });
-
 module.exports = router;

@@ -9,13 +9,123 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/SignInstyles.css">
+
+
+    <style>
+        .mail-verification-form {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            width: 260px;
+            text-align: center;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .mail-verification-form input[type="number"] {
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            padding: 5px;
+            font-size: 16px;
+            width: 70%; /* Adjust width as needed */
+            margin-bottom: 25px;
+        }
+
+        .mail-verification-form a {
+            text-decoration: none;
+            color: blue;
+            font-size: 16px;
+            margin-left: 10px; /* Adjust spacing as needed */
+        }
+        
+        
+
+        .heading {
+            font-family: Poppins-Bold;
+            font-size: 30px;
+            color: #333333;
+            text-align: center;
+        }
+        .input-containe button {
+            background-color: white;
+            color: blue;
+            border: 1px solid blue; /* Optional: Add border to make the button stand out */
+            padding: 5px 10px; /* Optional: Add padding for better appearance */
+            cursor: pointer; /* Optional: Change cursor to pointer on hover */
+            transition: background-color 0.3s, color 0.3s; /* Optional: Add smooth transition effect */
+        }
+        
+        .input-containe button:hover {
+            background-color: blue;
+            color: white;
+        }
+        .input-containe {
+            display: flex; /* Use flexbox to layout elements in a row */
+            align-items: center; /* Align items vertically in the center */
+        }
+        
+        .input-containe input {
+            /* Allow the input to grow to fill remaining space */
+            margin-right: 10px;
+            width: 50%; /* Add some space between the input and button */
+        }
+        
+        .input-containe button#resendButton {
+            width: 50%; /* Set the width of the button to 10% of the container */
+        }
+
+
+        .input-containerr button {
+            background-color: white;
+            color: blue;
+            border: 1px solid blue; /* Optional: Add border to make the button stand out */
+            padding: 5px 10px; /* Optional: Add padding for better appearance */
+            cursor: pointer; /* Optional: Change cursor to pointer on hover */
+            transition: background-color 0.3s, color 0.3s; /* Optional: Add smooth transition effect */
+        }
+        
+        .input-containerr button:hover {
+            background-color: blue;
+            color: white;
+        }
+        .input-containerr {
+            display: flex; /* Use flexbox to layout elements in a row */
+            align-items: center; /* Align items vertically in the center */
+        }
+        
+        .input-containerr input {
+            /* Allow the input to grow to fill remaining space */
+            margin-right: 10px;
+            width: 50%; /* Add some space between the input and button */
+        }
+        
+        .input-containerr button#resendButton {
+            width: 10%; /* Set the width of the button to 10% of the container */
+        }
+        
+    </style>
 </head>
 
 <body>
+
     <div class="container" id="container">
+        
         <div class="form-container sign-up-container">
             <h1>Create Account</h1>
-            <form id="signupForm" method="POST" action="/SignIn"> 
+            <form id="signupForm" method="POST" action="/send-otp"> 
                 <input type="text" id="signupName" name="name" placeholder="Name" required>
                 <input type="email" id="signupEmail" name="email" placeholder="Email">
                 <input type="password" id="signupPassword" name="password" placeholder="Password" required>
@@ -28,9 +138,28 @@
                     <option value="Lahore">Lahore</option>
                 </select>
                 <button id="signupButton" type="submit">Sign Up</button>
+                
             </form> 
+            <div class="mail-verification-form" id="mailVerificationForm">
+                <div id="response"></div>
+                <div class="heading">
+                    <h6>
+                        <b>Email Verification</b>
+                    </h6>
+                    <p style="color: black; text-align:left;">Enter the verification code sent to your email.</p>
+                </div>
+                <div class="input-containe">
+                    <input type="number"  id="verificationInput" placeholder="000000" maxlength="6">  
+                    <button id="resendButton">Resend</button>
+                </div>
+                <div class="input-containerr">
+                <button id="emailVerificationButton" type="button">Email Verification</button>
+            </div></div>
         </div>
+
+        
         <div class="form-container sign-in-container">
+            
             <form action="/Check" method="POST">
                 <h1>Sign in</h1>
                 <div class="input-container">
@@ -40,9 +169,9 @@
                 <input type="password" name="password" placeholder="Password" required/>
                 </div>
                 <a href="#" target="_blank">Forgot your password?</a>
-                <button type="submit">Sign In</button>
+                <button type="submit" id="signup">Sign In</button>
             </form>
-            
+           
 </div>
 
         <div class="overlay-container">
@@ -60,8 +189,172 @@
             </div>
         </div>
     </div>
-    
+
     <script src="/js/SignIn.js"></script>
+    <script>
+        function draggable(element) {
+            var isMouseDown = false;
+            var mouseX, mouseY;
+            var elementX = 0;
+            var elementY = 0;
+
+            element.addEventListener('mousedown', onMouseDown);
+            document.addEventListener('mouseup', onMouseUp);
+            document.addEventListener('mousemove', onMouseMove);
+
+            function onMouseDown(event) {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+                isMouseDown = true;
+            }
+
+            function onMouseUp() {
+                isMouseDown = false;
+                elementX = parseInt(element.style.left) || 0;
+                elementY = parseInt(element.style.top) || 0;
+            }
+
+            function onMouseMove(event) {
+                if (!isMouseDown) return;
+                var deltaX = event.clientX - mouseX;
+                var deltaY = event.clientY - mouseY;
+                element.style.left = elementX + deltaX + 'px';
+                element.style.top = elementY + deltaY + 'px';
+            }
+        }
+
+        // Make the mail verification form draggable
+        draggable(document.getElementById('mailVerificationForm'));
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script>
+
+        $(document).ready(function() {
+            $('#signupForm').submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                
+                // Serialize form data
+                var formData = $(this).serialize();
+                
+                // Send AJAX request
+                $.ajax({
+                    type: 'POST',
+                    url: '/send-otp',
+                    data: formData,
+                    success: function(response) {
+                        $('#response').text(response); // Update the response message
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function() {
+            $('#resendButton').click(function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                
+                // Select the form containing the input fields
+                var formData = $('#signupForm').serialize();
+                
+                // Send AJAX request
+                $.ajax({
+                    type: 'POST',
+                    url: '/send-otp',
+                    data: formData,
+                    success: function(response) {
+                        console.log('Email resent successfully');
+                        // Optionally, you can provide feedback to the user here
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                        // Optionally, you can handle errors and provide feedback to the user here
+                    }
+                });
+            });
+        });
+        
+$(document).ready(function() {
+    $('#verificationInput').on('input', function() {
+        $('#response').empty(); // Empty the response section when input is entered
+    });
+
+    $('#verificationInput').on('input', function() {
+        var inputValue = $(this).val();
+        if (inputValue.length > 6) {
+            $(this).val(inputValue.slice(0, 6)); // Limit input to maximum of 6 characters
+        }
+    });
+});
+
+
+$(document).ready(function() {
+    // Event listener for the "Email Verification" button
+    $('#emailVerificationButton').click(function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Get the entered OTP from the input field
+        var enteredOTP = $('#verificationInput').val(); // Get the generated OTP stored in the form's data attribute
+
+        // Send AJAX request to verify OTP
+        $.ajax({
+            type: 'POST',
+            url: '/verify-otp', // Replace with your server endpoint for OTP verification
+            data: {
+                otp: enteredOTP,
+            },
+            success: function(response) {
+                if (response.success) {
+                    $('#response').text('OTP matched. Account created.');
+
+                    var formData = {
+                        name: $('#signupName').val(),
+                        email: $('#signupEmail').val(),
+                        password: $('#signupPassword').val(),
+                        mobile: $('#signupMobile').val(),
+                        cnic: $('#signupCNIC').val(),
+                        nearestStation: $('#signupNearestStation').val()
+                    };
+
+                    // Construct a new form dynamically with hidden inputs
+                    var newForm = $('<form action="/SignIn" method="post"></form>');
+                    newForm.append('<input type="text" name="name" value="' + formData.name + '">');
+                    newForm.append('<input type="email" name="email" value="' + formData.email + '">');
+                    newForm.append('<input type="password" name="password" value="' + formData.password + '">');
+                    newForm.append('<input type="text" name="mobile" value="' + formData.mobile + '">');
+                    newForm.append('<input type="text" name="cnic" value="' + formData.cnic + '">');
+                    newForm.append('<input type="hidden" name="nearestStation" value="' + formData.nearestStation + '">');
+                    
+                    // Append the new form to the body and submit it
+                    $('body').append(newForm);
+                    newForm.submit();
+
+                   //// window.location.href = '/SignIN'; // Display success message
+                } else {
+                    $('#response').text('OTP not  match.'); // Display error message
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+                $('#response').text('Error verifying OTP.'); // Display error message
+            }
+        });
+    });
+});
+
+// Function to create the user
+function createUser() {
+    // Write your logic to create the user here
+    console.log('User created successfully');
+    // Optionally, you can redirect the user or perform other actions
+}
+
+
+     </script>
+       
+
 </body>
 
 </html>
