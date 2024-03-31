@@ -17,14 +17,10 @@ mongoose.connect('mongodb://localhost:27017/railway')
 .catch((err) => console.log("Mongo Error",err));
 
 // Use userRoutes for handling user-related requests
-app.use('/routes', userRoutes);
+// app.use('/routes', userRoutes);
 app.use('/', userRoutes);
 app.use('/SignIn',userRoutes);
 app.use('/Check',userRoutes);
-
-
-
-
 
 // Start the server
 const PORT = process.env.PORT || 3000;
