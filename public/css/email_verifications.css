@@ -1,0 +1,103 @@
+.mail-verification-form {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 260px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.mail-verification-form input[type="number"] {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    width: 70%; /* Adjust width as needed */
+    margin-bottom: 25px;
+}
+
+.mail-verification-form a {
+    text-decoration: none;
+    color: blue;
+    font-size: 16px;
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
+
+
+.heading {
+    font-family: Poppins-Bold;
+    font-size: 30px;
+    color: #333333;
+    text-align: center;
+}
+.input-containe button {
+    background-color: white;
+    color: blue;
+    border: 1px solid blue; /* Optional: Add border to make the button stand out */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    cursor: pointer; /* Optional: Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Optional: Add smooth transition effect */
+}
+
+.input-containe button:hover {
+    background-color: blue;
+    color: white;
+}
+.input-containe {
+    display: flex; /* Use flexbox to layout elements in a row */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.input-containe input {
+    /* Allow the input to grow to fill remaining space */
+    margin-right: 10px;
+    width: 50%; /* Add some space between the input and button */
+}
+
+.input-containe button#resendButton {
+    width: 50%; /* Set the width of the button to 10% of the container */
+}
+
+
+.input-containerr button {
+    background-color: white;
+    color: blue;
+    border: 1px solid blue; /* Optional: Add border to make the button stand out */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    cursor: pointer; /* Optional: Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Optional: Add smooth transition effect */
+}
+
+.input-containerr button:hover {
+    background-color: blue;
+    color: white;
+}
+.input-containerr {
+    display: flex; /* Use flexbox to layout elements in a row */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.input-containerr input {
+    /* Allow the input to grow to fill remaining space */
+    margin-right: 10px;
+    width: 50%; /* Add some space between the input and button */
+}
+
+.input-containerr button#resendButton {
+    width: 10%; /* Set the width of the button to 10% of the container */
+}
