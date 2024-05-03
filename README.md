@@ -4,11 +4,12 @@ To run the project you must "clone" the repository. Open the folder in your IDE 
 
 Then run the following commands on the terminal:
 
-npm init -y
-npm install nodemon
-npm install bcrypt.js
-npm install cors
-npm install dotenv
-npm install nodemailer
-npm install jsonwebtoken
-npm install mongoose
+   npm init -y
+   npm install express
+   npm install nodemon
+   npm install bcrypt.js
+   npm install cors
+   npm install dotenv
+   npm install nodemailer
+   npm install jsonwebtoken
+   npm install mongoose
