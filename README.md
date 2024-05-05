@@ -15,6 +15,12 @@ Then run the following commands on the terminal:
    9. npm install jsonwebtoken
 
    
+   After all the installations, Create a file named ".env" in your root directory.
+   In your .env file copy the following code:
+
+   1. API_PORT =    //Your PORT NO here
+   2. MONGO_URI =    // your database URI here
+   3. TOKEN_KEY =  //Any random string here 
    
    
    
