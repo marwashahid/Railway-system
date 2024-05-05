@@ -29,6 +29,9 @@ function draggable(element) {
     }
 }
 
+
+
+
 // Make the mail verification form draggable
 draggable(document.getElementById('mailVerificationForm'));
 
@@ -41,6 +44,10 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
 document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting immediately
+
+
+
+
     document.getElementById('mailVerificationForm').style.display = 'block'; // Show the email verification form
     // Here you can add code to submit the form and handle the response
     document.getElementsByClassName('form-container sign-up-container').style.opacity=50;
@@ -165,4 +172,133 @@ $.ajax({
 });
 });
 
+
+// Function to show the email verification form and disable interaction with other elements
+function showEmailVerificationForm() {
+    // Show the email verification form
+    $('#mailVerificationForm').show();
+    // Disable interaction with other elements
+    $(' .blur1').addClass('blur');
+}
+
+// Function to hide the email verification form and enable interaction with other elements
+function hideEmailVerificationForm() {
+    // Hide the email verification form
+    $('#mailVerificationForm').hide();
+    // Enable interaction with other elements
+    $(' .blur1').removeClass('blur');
+}
+
+// Event listener for the signup form submission
+$('#signupForm').on('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    // Show the email verification form
+    showEmailVerificationForm();
+});
+
+// Event listener for the close icon in the email verification form
+$('.close-icon').on('click', function() {
+    // Hide the email verification form
+    hideEmailVerificationForm();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if all input fields are valid
+    function checkValidity() {
+        var name = document.getElementById('signupName').value.trim();
+        var email = document.getElementById('signupEmail').value.trim();
+        var password = document.getElementById('signupPassword').value.trim();
+        var mobile = document.getElementById('signupMobile').value.trim();
+        var cnic = document.getElementById('signupCNIC').value.trim();
+        var nearestStation = document.getElementById('signupNearestStation').value;
+
+        // Validate email
+        var emailRegex = /^[a-z0-9._%+-]+@gmail\.com$/;
+        if (!emailRegex.test(email)) {
+            document.getElementById('signupEmail').setCustomValidity('Please enter a valid Gmail address.');
+        } else {
+            document.getElementById('signupEmail').setCustomValidity('');
+        }
+
+        // Validate password
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$/;
+        if (!passwordRegex.test(password)) {
+            document.getElementById('signupPassword').setCustomValidity('Password must contain at least one lowercase letter, one uppercase letter, and be at least 8 characters long.');
+        } else {
+            document.getElementById('signupPassword').setCustomValidity('');
+        }
+
+        // Validate mobile number
+        var mobileRegex = /^\d{11}$/;
+        if (!mobileRegex.test(mobile)) {
+            document.getElementById('signupMobile').setCustomValidity('Mobile number must be 11 digits long.');
+        } else {
+            document.getElementById('signupMobile').setCustomValidity('');
+        }
+
+        // Validate CNIC
+        var cnicRegex = /^\d{13}$/;
+        if (!cnicRegex.test(cnic)) {
+            document.getElementById('signupCNIC').setCustomValidity('CNIC must be 13 digits long.');
+        } else {
+            document.getElementById('signupCNIC').setCustomValidity('');
+        }
+
+        // Check if all inputs are filled and valid
+        var isValid = name && email && password && mobile && cnic && nearestStation;
+        
+        // Enable or disable the submit button based on validity
+        document.getElementById('signupSubmit').disabled = !isValid;
+    }
+
+    // Add event listeners to input fields to check validity on change
+    document.getElementById('signupName').addEventListener('input', checkValidity);
+    document.getElementById('signupEmail').addEventListener('input', checkValidity);
+    document.getElementById('signupPassword').addEventListener('input', checkValidity);
+    document.getElementById('signupMobile').addEventListener('input', checkValidity);
+    document.getElementById('signupCNIC').addEventListener('input', checkValidity);
+    document.getElementById('signupNearestStation').addEventListener('change', checkValidity);
+    
+    // Initially check validity when the page loads
+    checkValidity();
+});
+
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    // Validate email
+    var email = document.getElementById('signupEmail').value.trim();
+    var emailRegex = /^[a-z0-9._%+-]+@gmail\.com$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid Gmail address.');
+        return;
+    }
+
+    // Validate password
+    var password = document.getElementById('signupPassword').value.trim();
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        alert('Password must contain at least one lowercase letter, one uppercase letter, and be at least 8 characters long.');
+        return;
+    }
+
+    // Validate mobile number
+    var mobile = document.getElementById('signupMobile').value.trim();
+    var mobileRegex = /^\d{11}$/;
+    if (!mobileRegex.test(mobile)) {
+        alert('Mobile number must be 11 digits long.');
+        return;
+    }
+
+    // Validate CNIC
+    var cnic = document.getElementById('signupCNIC').value.trim();
+    var cnicRegex = /^\d{13}$/;
+    if (!cnicRegex.test(cnic)) {
+        alert('CNIC must be 13 digits long.');
+        return;
+    }
+
+    // If all validations pass, submit the form
+    this.submit();
+});
 
