@@ -18,9 +18,9 @@ Then run the following commands on the terminal:
    After all the installations, Create a file named ".env" in your root directory.
    In your .env file copy the following code:
 
-   API_PORT =    //Your PORT NO here
-   MONGO_URI =    // your database URI here
-   TOKEN_KEY =  //Any random string here 
+   1. API_PORT =    //Your PORT NO here
+   2. MONGO_URI =    // your database URI here
+   3. TOKEN_KEY =  //Any random string here 
    
    
    
